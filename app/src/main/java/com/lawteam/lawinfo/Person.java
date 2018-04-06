@@ -9,12 +9,14 @@ public class Person {
     private String urlPhoto;
     private String group;
     private String workingOn;
+    private String desctription;
 
-    Person(String _name, String _group, String _workingOn, String _urlPhoto){
+    Person(String _name, String _group, String _workingOn, String _urlPhoto, String _description){
         name = _name;
         group = _group;
         workingOn = _workingOn;
         urlPhoto = _urlPhoto;
+        desctription = _description;
     }
 
     String getName(){
@@ -26,7 +28,6 @@ public class Person {
     String getWorkingOn(){
         return workingOn;
     }
-    String getUrlPhoto(){
-        return urlPhoto;
-    }
+    String getUrlPhoto(){ return urlPhoto;}
+    String getDesctription() {return desctription;}
 }

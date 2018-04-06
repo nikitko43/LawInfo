@@ -1,15 +1,21 @@
 package com.lawteam.lawinfo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +25,11 @@ class TeamAdapter extends BaseAdapter {
     LayoutInflater lInflater;
     ArrayList<Person> team;
 
-    TeamAdapter(Context context, ArrayList<Person> _team) {
+    public TeamAdapter(Context context, ArrayList<Person> _team) {
         ctx = context;
         team = _team;
-        lInflater = LayoutInflater.from(context);
+        lInflater = (LayoutInflater) ctx
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     // кол-во элементов
@@ -46,7 +53,6 @@ class TeamAdapter extends BaseAdapter {
     // пункт списка
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // используем созданные, но не используемые view
         View view = convertView;
         if (view == null) {
             view = lInflater.inflate(R.layout.item, parent, false);
@@ -57,13 +63,13 @@ class TeamAdapter extends BaseAdapter {
         // заполняем View в пункте списка данными
         // и картинка
         ((TextView) view.findViewById(R.id.textName)).setText(p.getName());
-        ((TextView) view.findViewById(R.id.textGroup)).setText(p.getGroup());
-        // ((ImageView) view.findViewById(R.id.photo)).setImageResource(p.image); <- фото
+        ((TextView) view.findViewById(R.id.textWorkingOn)).setText(p.getWorkingOn());
+        ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.lexech);
 
         return view;
     }
 
-    Person getPerson(int position) {
+    private Person getPerson(int position) {
         return ((Person) getItem(position));
     }
 
@@ -74,19 +80,26 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Person> team = new ArrayList<Person>();
     TeamAdapter teamAdapter;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.context_menu, menu);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ListView lv = findViewById(R.id.mainListView);
-        team.add(new Person("Никита", "ИУ5", "фвфы", "dsf"));
-        team.add(new Person("Максим", "ИУ5", "фвфы", "dsf"));
-        team.add(new Person("Марк", "ИУ5", "фвфы", "dsf"));
-        team.add(new Person("Роман", "ИУ5", "фвфы", "dsf"));
+        team.add(new Person("Никита", "ИУ5", "фвфы", "dsf", "asdas"));
+        team.add(new Person("Максим", "ИУ5", "фвфы", "dsf", "asda"));
+        team.add(new Person("Марк", "ИУ5", "фвфы", "dsf", "asdas"));
+        team.add(new Person("Роман", "ИУ5", "фвфы", "dsf", "dss"));
 
-        teamAdapter = new TeamAdapter(this, team);
-
-        lv.setAdapter(teamAdapter);
+        teamAdapter = new TeamAdapter(getApplicationContext(), team);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView lv = (ListView) findViewById(R.id.mainListView);
+        lv.setAdapter(teamAdapter);
     }
 }
