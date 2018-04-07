@@ -48,13 +48,15 @@
 
     <TextView
         android:id="@+id/textWorkingOn"
-        android:layout_width="211dp"
-        android:layout_height="17dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="6dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/photo"
         app:layout_constraintTop_toBottomOf="@+id/textName" />
 

@@ -5,18 +5,16 @@ import java.io.Serializable;
 public class Person implements Serializable {           //класс участника команды
     private int id;
     private String name;        //имя участника
-    private String urlPhoto;    //указание на местоположение фото участника с помощью URL
     private String group;       //учебная группа МГТУ им. Н.Э. Баумана
     private String workingOn;   //должность при разработке данного проекта
     private String description; //информация о себе
 
     //конструктор с параметрами
-    Person(int _id, String _name, String _group, String _workingOn, String _urlPhoto, String _description){
+    Person(int _id, String _name, String _group, String _workingOn, String _description){
         id = _id;
         name = _name;
         group = _group;
         workingOn = _workingOn;
-        urlPhoto = _urlPhoto;
         description = _description;
     }
 
@@ -34,11 +32,6 @@ public class Person implements Serializable {           //класс участ�
     //возврат должности участника
     String getWorkingOn(){
         return workingOn;
-    }
-
-    //возврат URL-пути фото участника
-    String getUrlPhoto(){
-        return urlPhoto;
     }
 
     //возврат информации о себе
