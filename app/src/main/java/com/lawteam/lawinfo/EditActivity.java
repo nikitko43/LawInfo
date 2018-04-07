@@ -50,7 +50,7 @@ public class EditActivity extends AppCompatActivity {
         System.out.println("------->" + id_selected);
         Person p = new Person(id_selected,
                 editName.getText().toString(), editGroup.getText().toString(),
-                editWorkingOn.getText().toString(), "", editDescription.getText().toString());
+                editWorkingOn.getText().toString(), editDescription.getText().toString());
 
         Team.team.set(id_selected, p);
         setResult(RESULT_OK, new Intent());

@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DescriptionActivity" />
-        <activity android:name=".EditActivity" />
+        <activity android:name=".EditActivity"
+            android:label="Изменение"/>
         <activity android:name=".LoginActivity"></activity>
     </application>
 
