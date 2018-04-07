@@ -1,7 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.android.support:support-annotations:26.1.0@jar">
     <CLASSES>
+<<<<<<< master:.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0_jar.xml
       <root url="jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar!/" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f16fbec1be8d4ecb0215fce8e87541c3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f16fbec1be8d4ecb0215fce8e87541c3/res" />
+>>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_appcompat_v7_26_1_0.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>
