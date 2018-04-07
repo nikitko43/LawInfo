@@ -43,7 +43,7 @@ public class DescriptionActivity extends AppCompatActivity {
         TextView tvDescription = findViewById(R.id.DescrDescription);
 
         tvName.setText(selected.getName());
-        tvGroup.setText(selected.getGroup());
+        tvGroup.setText("Группа: " + selected.getGroup());
         tvWorkingOn.setText(selected.getWorkingOn());
         tvDescription.setText(selected.getDescription());
     }
