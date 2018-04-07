@@ -1,12 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: javax.inject:javax.inject:1@jar">
     <CLASSES>
-<<<<<<< master:.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml
       <root url="jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/61718e8f2c0361152cdfe07d6c4c7672/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/61718e8f2c0361152cdfe07d6c4c7672/res" />
->>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_support_core_ui_26_1_0.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>

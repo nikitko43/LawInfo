@@ -26,8 +26,6 @@ public class DescriptionActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.context_menu, menu);

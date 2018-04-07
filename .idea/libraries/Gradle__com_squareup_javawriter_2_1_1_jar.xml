@@ -1,12 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.squareup:javawriter:2.1.1@jar">
     <CLASSES>
-<<<<<<< master:.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml
       <root url="jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3f8556607c51b6f6f6b8d9cdb81a9b03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3f8556607c51b6f6f6b8d9cdb81a9b03/res" />
->>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_support_compat_26_1_0.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>

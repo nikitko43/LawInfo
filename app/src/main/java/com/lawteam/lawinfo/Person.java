@@ -2,7 +2,8 @@ package com.lawteam.lawinfo;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {           //класс участника команды
+//класс участника команды
+public class Person implements Serializable {
     private String name;        //имя участника
     private String urlPhoto;    //указание на местоположение фото участника с помощью URL
     private String group;       //учебная группа МГТУ им. Н.Э. Баумана
