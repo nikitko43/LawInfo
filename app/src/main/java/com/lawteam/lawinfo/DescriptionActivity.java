@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+//класс формы с информацией об определённом участнике
 public class DescriptionActivity extends AppCompatActivity {
 
     @Override
