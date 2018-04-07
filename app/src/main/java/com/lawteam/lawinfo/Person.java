@@ -1,22 +1,24 @@
 package com.lawteam.lawinfo;
 
+import java.io.Serializable;
+
 /**
  * Created by nikitareutov on 06.04.2018.
  */
 
-public class Person {
+public class Person implements Serializable {
     private String name;
     private String urlPhoto;
     private String group;
     private String workingOn;
-    private String desctription;
+    private String description;
 
     Person(String _name, String _group, String _workingOn, String _urlPhoto, String _description){
         name = _name;
         group = _group;
         workingOn = _workingOn;
         urlPhoto = _urlPhoto;
-        desctription = _description;
+        description = _description;
     }
 
     String getName(){
@@ -29,5 +31,5 @@ public class Person {
         return workingOn;
     }
     String getUrlPhoto(){ return urlPhoto;}
-    String getDesctription() {return desctription;}
+    String getDescription() {return description;}
 }

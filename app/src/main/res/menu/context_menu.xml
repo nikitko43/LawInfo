@@ -6,9 +6,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/first"
-        android:title="First"
-        android:icon="@android:drawable/ic_menu_edit"/>
-    <item android:id="@+id/second"
-        android:title="Second"
+        android:title="Изменить"
         android:icon="@android:drawable/ic_menu_edit"/>
 </menu>

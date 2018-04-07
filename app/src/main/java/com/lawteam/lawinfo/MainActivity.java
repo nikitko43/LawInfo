@@ -2,6 +2,7 @@ package com.lawteam.lawinfo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -11,12 +12,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,17 +85,11 @@ public class MainActivity extends AppCompatActivity {
     TeamAdapter teamAdapter;
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.context_menu, menu);
-        return true;
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        team.add(new Person("Никита", "ИУ5", "фвфы", "dsf", "asdas"));
-        team.add(new Person("Максим", "ИУ5", "фвфы", "dsf", "asda"));
-        team.add(new Person("Марк", "ИУ5", "фвфы", "dsf", "asdas"));
-        team.add(new Person("Роман", "ИУ5", "фвфы", "dsf", "dss"));
+        team.add(new Person("Реутов Никита", "ИУ5", "Капитан, красавчик", "dsf", "asdas"));
+        team.add(new Person("Кондратьев Максим", "ИУ5", "Чисто нихуя", "dsf", "asda"));
+        team.add(new Person("Чеснавский Марк", "ИУ5", "Программирование", "dsf", "asdas"));
+        team.add(new Person("Векшин Роман", "ИУ6", "Что-то еще, хз", "dsf", "dss"));
 
         teamAdapter = new TeamAdapter(getApplicationContext(), team);
 
@@ -101,5 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
         ListView lv = (ListView) findViewById(R.id.mainListView);
         lv.setAdapter(teamAdapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, DescriptionActivity.class);
+                intent.putExtra("Selected", team.get(i));
+                startActivity(intent);
+            }
+        });
     }
 }
