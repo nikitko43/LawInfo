@@ -9,9 +9,10 @@ import android.widget.EditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+//класс формы для изменения данных об участнике
 public class EditActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth; //объект для аутентификации через базу данных пользователей
 
     EditText editName;
     EditText editGroup;
@@ -19,9 +20,9 @@ public class EditActivity extends AppCompatActivity {
     EditText editDescription;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit);
+    protected void onCreate(Bundle savedInstanceState) {    //вызывается при создании формы
+        super.onCreate(savedInstanceState); //передача параметров для создания при вызове метода родительского класса
+        setContentView(R.layout.activity_edit); //устанавливает содержимое Activity из layout-файла
 
         Person person = Team.team.get(getIntent().getIntExtra("Selected", 1));
 
@@ -37,7 +38,7 @@ public class EditActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null){
+        if (currentUser == null){   //если не произошел вход, то переходим к форме входа
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();

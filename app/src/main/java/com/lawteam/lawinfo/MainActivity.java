@@ -23,7 +23,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class TeamAdapter extends BaseAdapter { //класс воспроизведения списка участников
+//класс воспроизведения списка участников
+class TeamAdapter extends BaseAdapter {
     Context ctx;    //объект, предоставляющий доступ к базовым функциям приложения, ресурсам, файловой системе
     LayoutInflater lInflater; //объект, необходимый для формирования View-элемента из содержимого layout-файла
     ArrayList<Person> team; //список участников

@@ -28,12 +28,12 @@ public class DescriptionActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+    public boolean onOptionsItemSelected(MenuItem item) {   //вызывается при выборе элемента из Action bar
+        switch (item.getItemId()) { //выбор действия в соответствии с конкретным элементом меню
+            case android.R.id.home: //выход из приложения
                 finish();
                 return true;
-            case R.id.first:
+            case R.id.first:    //открытие форма изменения
                 Intent intent = new Intent(this, EditActivity.class);
                 intent.putExtra("Selected", getIntent().getIntExtra("Selected", 1));
                 startActivityForResult(intent, 113);
@@ -44,17 +44,17 @@ public class DescriptionActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.context_menu, menu);
+    public boolean onCreateOptionsMenu(Menu menu) { //вызывается при создании опционального меню
+        getMenuInflater().inflate(R.menu.context_menu, menu); //формирование View-элемента из layout-файла меню
         return true;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_description);
+    protected void onCreate(Bundle savedInstanceState) {    //вызывается при создании формы
+        super.onCreate(savedInstanceState); //передача параметров для создания при вызове метода родительского класса
+        setContentView(R.layout.activity_description); //устанавливает содержимое Activity из layout-файла
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //формирование кнопки возврата
 
         Intent intent = getIntent();
         Person selected = Team.team.get(intent.getIntExtra("Selected", 1));
