@@ -2,17 +2,14 @@ package com.lawteam.lawinfo;
 
 import java.io.Serializable;
 
-/**
- * Created by nikitareutov on 06.04.2018.
- */
+public class Person implements Serializable {           //класс участника команды
+    private String name;        //имя участника
+    private String urlPhoto;    //указание на местоположение фото участника с помощью URL
+    private String group;       //учебная группа МГТУ им. Н.Э. Баумана
+    private String workingOn;   //должность при разработке данного проекта
+    private String description; //информация о себе
 
-public class Person implements Serializable {
-    private String name;
-    private String urlPhoto;
-    private String group;
-    private String workingOn;
-    private String description;
-
+    //конструктор с параметрами
     Person(String _name, String _group, String _workingOn, String _urlPhoto, String _description){
         name = _name;
         group = _group;
@@ -21,15 +18,28 @@ public class Person implements Serializable {
         description = _description;
     }
 
+    //возврат имени участника
     String getName(){
         return name;
     }
+
+    //возврат учебной группы участника
     String getGroup(){
         return group;
     }
+
+    //возврат должности участника
     String getWorkingOn(){
         return workingOn;
     }
-    String getUrlPhoto(){ return urlPhoto;}
-    String getDescription() {return description;}
+
+    //возврат URL-пути фото участника
+    String getUrlPhoto(){
+        return urlPhoto;
+    }
+
+    //возврат информации о себе
+    String getDescription() {
+        return description;
+    }
 }
