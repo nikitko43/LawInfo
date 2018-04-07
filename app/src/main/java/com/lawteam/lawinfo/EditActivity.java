@@ -3,6 +3,8 @@ package com.lawteam.lawinfo;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -11,10 +13,27 @@ public class EditActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    EditText editName;
+    EditText editGroup;
+    EditText editWorkingOn;
+    EditText editDescription;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        Person person = Team.team.get(getIntent().getIntExtra("Selected", 1));
+
+        editName = findViewById(R.id.editName);
+        editGroup = findViewById(R.id.editGroup);
+        editWorkingOn = findViewById(R.id.editWorkingOn);
+        editDescription = findViewById(R.id.editDescription);
+
+        editName.setText(person.getName());
+        editGroup.setText(person.getGroup());
+        editWorkingOn.setText(person.getWorkingOn());
+        editDescription.setText(person.getDescription());
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -23,7 +42,17 @@ public class EditActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
 
+    public void onClickSave(View v) {
+        int id_selected = getIntent().getIntExtra("Selected", 1);
+        System.out.println("------->" + id_selected);
+        Person p = new Person(id_selected,
+                editName.getText().toString(), editGroup.getText().toString(),
+                editWorkingOn.getText().toString(), "", editDescription.getText().toString());
 
+        Team.team.set(id_selected, p);
+        setResult(RESULT_OK, new Intent());
+        finish();
     }
 }

@@ -3,6 +3,7 @@ package com.lawteam.lawinfo;
 import java.io.Serializable;
 
 public class Person implements Serializable {           //класс участника команды
+    private int id;
     private String name;        //имя участника
     private String urlPhoto;    //указание на местоположение фото участника с помощью URL
     private String group;       //учебная группа МГТУ им. Н.Э. Баумана
@@ -10,7 +11,8 @@ public class Person implements Serializable {           //класс участ�
     private String description; //информация о себе
 
     //конструктор с параметрами
-    Person(String _name, String _group, String _workingOn, String _urlPhoto, String _description){
+    Person(int _id, String _name, String _group, String _workingOn, String _urlPhoto, String _description){
+        id = _id;
         name = _name;
         group = _group;
         workingOn = _workingOn;
@@ -18,6 +20,7 @@ public class Person implements Serializable {           //класс участ�
         description = _description;
     }
 
+    int getId() { return id; }
     //возврат имени участника
     String getName(){
         return name;

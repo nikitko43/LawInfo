@@ -1,16 +1,7 @@
 <component name="libraryTable">
   <library name="org.hamcrest:hamcrest-integration:1.3@jar">
     <CLASSES>
-<<<<<<< Updated upstream:.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml
-<<<<<<< master:.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml
-      <root url="jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/d92416acfa5ac6458f9de8ddafed96c8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/d92416acfa5ac6458f9de8ddafed96c8/res" />
->>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_support_v4_26_1_0.xml
-=======
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar!/" />
->>>>>>> Stashed changes:.idea/libraries/org_hamcrest_hamcrest_integration_1_3_jar.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>

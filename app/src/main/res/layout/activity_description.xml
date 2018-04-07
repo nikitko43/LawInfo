@@ -8,14 +8,14 @@
 
     <ImageView
         android:id="@+id/photoDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:contentDescription="photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/lexech" />
+        app:srcCompat="@mipmap/nikita" />
 
     <TextView
         android:id="@+id/DescrName"

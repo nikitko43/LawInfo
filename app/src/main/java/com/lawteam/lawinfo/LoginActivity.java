@@ -35,20 +35,28 @@ public class LoginActivity extends AppCompatActivity {
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            finish();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Неверный логин/пароль",
-                                    Toast.LENGTH_SHORT).show();
+        if (email.equals("")){
+            Toast.makeText(LoginActivity.this, "Введите e-mail", Toast.LENGTH_SHORT).show();
+        }
+        else if (password.equals("")){
+            Toast.makeText(LoginActivity.this, "Введите пароль", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                finish();
+                            }
+                            else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(LoginActivity.this, "Неверный логин/пароль", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
 }

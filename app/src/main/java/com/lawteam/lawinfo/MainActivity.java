@@ -57,7 +57,7 @@ class TeamAdapter extends BaseAdapter { //класс воспроизведен�
     //возврат пункта списка
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;    //основа компоненета интерфейса
+        View view = convertView;    //основа компонента интерфейса
         if (view == null) {
             //формирование View-элемента
             view = lInflater.inflate(R.layout.item, parent, false);
@@ -68,7 +68,20 @@ class TeamAdapter extends BaseAdapter { //класс воспроизведен�
         // заполняем View в пункте списка текстовыми данными и изображениями
         ((TextView) view.findViewById(R.id.textName)).setText(p.getName());
         ((TextView) view.findViewById(R.id.textWorkingOn)).setText(p.getWorkingOn());
-        ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.lexech);
+        switch (p.getId()) {
+            case 0:
+                ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.nikita);
+                break;
+            case 1:
+                ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.maksim);
+                break;
+            case 2:
+                ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.mark);
+                break;
+            case 3:
+                ((ImageView) view.findViewById(R.id.photo)).setImageResource(R.mipmap.roman);
+                break;
+        }
 
         return view;
     }
@@ -82,17 +95,17 @@ class TeamAdapter extends BaseAdapter { //класс воспроизведен�
 //класс основной формы, обеспечивающей взаимодействие пользователя с приложением
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Person> team = new ArrayList<Person>();   //список участников
     TeamAdapter teamAdapter;                       //объект, необходимый для вопроизведения всех элементов интерфейса на экране
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        teamAdapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {    //считывание данных об участниках из базы данных
-        team.add(new Person("Реутов Никита", "ИУ5", "Капитан, красавчик", "dsf", "asdas"));
-        team.add(new Person("Кондратьев Максим", "ИУ5", "Чисто нихуя", "dsf", "asda"));
-        team.add(new Person("Чеснавский Марк", "ИУ5", "Программирование", "dsf", "asdas"));
-        team.add(new Person("Векшин Роман", "ИУ6", "Что-то еще, хз", "dsf", "dss"));
+        Team t = new Team();
 
-        teamAdapter = new TeamAdapter(getApplicationContext(), team);   //создание адаптера
+        teamAdapter = new TeamAdapter(getApplicationContext(), Team.team);   //создание адаптера
 
         super.onCreate(savedInstanceState); //передача параметров для создания при вызове метода родительского класса
         setContentView(R.layout.activity_main); //генерирование формы на основе layout-файлаы
@@ -106,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //создание объекта, описывающего операцию открытия новой формы
                 Intent intent = new Intent(MainActivity.this, DescriptionActivity.class);
-                intent.putExtra("Selected", team.get(i));
-                startActivityForResult(intent, 114);
+                intent.putExtra("Selected", i);
+                startActivityForResult(intent, 112);
             }
         });
     }
