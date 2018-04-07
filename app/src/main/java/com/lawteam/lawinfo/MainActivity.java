@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 //создание объекта, описывающего операцию открытия новой формы
                 Intent intent = new Intent(MainActivity.this, DescriptionActivity.class);
                 intent.putExtra("Selected", team.get(i));
-                startActivity(intent);
+                startActivityForResult(intent, 114);
             }
         });
     }

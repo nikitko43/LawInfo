@@ -17,10 +17,16 @@ public class DescriptionActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+            case R.id.first:
+                Intent intent = new Intent(this, EditActivity.class);
+                startActivity(intent);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

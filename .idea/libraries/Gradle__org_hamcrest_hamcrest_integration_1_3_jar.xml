@@ -1,7 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar">
     <CLASSES>
+<<<<<<< master:.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml
       <root url="jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar!/" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cc0135badf609f66a67bce7e36db17e6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cc0135badf609f66a67bce7e36db17e6/jars/classes.jar!/" />
+>>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_support_media_compat_26_1_0.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LawInfo</string>
     <string name="menu">Menu</string>
+    <string name="e_mail">E-mail:</string>
 </resources>
