@@ -1,8 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.android.support:support-core-ui-26.1.0">
     <CLASSES>
+<<<<<<< master:.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0.xml
       <root url="jar://C:/Users/Administrator/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/09d6c89d55cfe3a59aff8685832ffa49/jars/classes.jar!/" />
       <root url="file://C:/Users/Administrator/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/09d6c89d55cfe3a59aff8685832ffa49/res" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/runner-1.0.1.aar/4b6e2ab6322d7d7e505e799d7665c37b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/runner-1.0.1.aar/4b6e2ab6322d7d7e505e799d7665c37b/jars/classes.jar!/" />
+>>>>>>> Сделал авторизацию админа:.idea/libraries/com_android_support_test_runner_1_0_1.xml
     </CLASSES>
     <JAVADOC />
     <SOURCES>
