@@ -20,30 +20,29 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    protected void onCreate(Bundle savedInstanceState) {    //вызывается при создании формы
+        super.onCreate(savedInstanceState); //передача параметров для создания при вызове метода родительского класса
+        setContentView(R.layout.activity_login);    //устанавливает содержимое Activity из layout-файла
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); //получение экземпляра класса FirebaseAuth, для работы с разграничение доступа
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 
-    public void onClickLogIn(View v) {
+    public void onClickLogIn(View v) {  //вызывает при нажатии на кнопку входа
+        //считывание данных из полей для ввода
         EditText etEmail = findViewById(R.id.editTextEmail);
         EditText etPassword = findViewById(R.id.editTextPassword);
-
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
+        //вход под именем определенного пользователя
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                        if (task.isSuccessful()) {  //вход при верном логине и пароле
                             finish();
-                        } else {
-                            // If sign in fails, display a message to the user.
+                        } else {    //вывод сообщение о некорректности введенных данных
                             Toast.makeText(LoginActivity.this, "Неверный логин/пароль",
                                     Toast.LENGTH_SHORT).show();
                         }

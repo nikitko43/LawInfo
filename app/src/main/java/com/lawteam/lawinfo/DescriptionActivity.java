@@ -12,12 +12,12 @@ import android.widget.TextView;
 public class DescriptionActivity extends AppCompatActivity {
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+    public boolean onOptionsItemSelected(MenuItem item) {   //вызывается при выборе элемента из Action bar
+        switch (item.getItemId()) { //выбор действия в соответствии с конкретным элементом меню
+            case android.R.id.home: //выход из приложения
                 finish();
                 return true;
-            case R.id.first:
+            case R.id.first:    //открытие форма изменения
                 Intent intent = new Intent(this, EditActivity.class);
                 startActivity(intent);
                 return true;
@@ -27,26 +27,29 @@ public class DescriptionActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.context_menu, menu);
+    public boolean onCreateOptionsMenu(Menu menu) { //вызывается при создании опционального меню
+        getMenuInflater().inflate(R.menu.context_menu, menu); //формирование View-элемента из layout-файла меню
         return true;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_description);
+    protected void onCreate(Bundle savedInstanceState) {    //вызывается при создании формы
+        super.onCreate(savedInstanceState); //передача параметров для создания при вызове метода родительского класса
+        setContentView(R.layout.activity_description); //устанавливает содержимое Activity из layout-файла
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  //формирование кнопки возврата
 
         Intent intent = getIntent();
+        //получение объекта участника из объекта, описывающего операцию открытия формы
         Person selected = (Person) intent.getSerializableExtra("Selected");
 
+        //копирование данных об участнике
         TextView tvName = findViewById(R.id.DescrName);
         TextView tvGroup = findViewById(R.id.DescrGroup);
         TextView tvWorkingOn = findViewById(R.id.DescrWorkingOn);
         TextView tvDescription = findViewById(R.id.DescrDescription);
 
+        //вывод данных об участнике
         tvName.setText(selected.getName());
         tvGroup.setText("Группа: " + selected.getGroup());
         tvWorkingOn.setText(selected.getWorkingOn());
